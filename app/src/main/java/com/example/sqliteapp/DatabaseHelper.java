@@ -65,6 +65,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return arrayList;
     }
+    public void delete(int id){
+        SQLiteDatabase db=this.getWritableDatabase();
+        String deleteQuery="DELETE FROM "+TABLE_STUDENTS
+                +" WHERE "+KEY_ID+"='"+id+"'";
+        db.execSQL(deleteQuery);
+        db.close();
+    }
 
 
 }
